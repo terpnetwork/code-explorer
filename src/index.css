@@ -44,3 +44,7 @@ code {
   color: white;
   padding: 10px;
   }
+
+  .logo {
+    max-height:40px; padding:5px; margin:5px;
+  }
