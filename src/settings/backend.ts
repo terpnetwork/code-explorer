@@ -14,7 +14,7 @@ export interface BackendSettings {
 // Configuration matches local devnet as defined in
 // https://github.com/cosmos/cosmjs/tree/main/scripts/wasmd
 const devnetSettings: BackendSettings = {
-  nodeUrls: ["http://rpc.osmosis.zone"],
+  nodeUrls: ["https://rpc.osmosis.zone"],
   denominations: ["uosmo", "uion"],
   addressPrefix: "osmo",
   gasPrice: GasPrice.fromString("0.25uosmo"),
