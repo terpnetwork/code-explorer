@@ -8,14 +8,14 @@
 a.code-content {
   padding: 10px;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #222;
+  /* background-color: rgba(255, 255, 255, 0.8); */
   display: block;
   height: 100%;
+  color: rgb(235, 212, 255);
 }
 
 a.code-content:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  color:white
 }
 
 .code-content .id {
@@ -28,4 +28,8 @@ a.code-content:hover {
 
 .code-content .details {
   display: inline-block;
+}
+
+.table {
+  color: white;
 }

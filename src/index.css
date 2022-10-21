@@ -8,8 +8,9 @@ body {
 
   background-size: 100%;
   background-repeat: no-repeat;
-  background-color: black !important;
-  background-image: url(./assets/background.jpg);
+  background-color: rgb(26, 3, 57) !important;
+  background-image: url(./assets/bk2.jpeg);
+  color: white;
 }
 
 code {
@@ -26,19 +27,20 @@ code {
 }
 */
 
-.white-row {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #222;
+.breadcrumb, .breadcrumb-item.active, .list-group, .list-group-item {
+  background-color: transparent;
+  color: white;
 }
 
-.white-row-first {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-top: 1rem;
-}
 
-.white-row-last {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding-bottom: 0;
-}
+
+.card {
+  background: rgba(50, 6, 113, 0.72);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(50, 6, 113, 0.45);
+  color: white;
+  padding: 10px;
+  }

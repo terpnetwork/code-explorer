@@ -58,76 +58,78 @@ export function CodePage(): JSX.Element {
     <div className="page">
       <Header />
       <div className="container mt-3">
-        <div className="row white-row white-row-first">
-          <div className="col">
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <Link to="/codes">Codes</Link>
+        <div className="card">
+          <div className="row white-row white-row-first">
+            <div className="col">
+              <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link to="/codes">Codes</Link>
+                  </li>
+                  <li className="breadcrumb-item active" aria-current="page">
+                    {pageTitle}
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div className="row white-row">
+            <div className="col">
+              <h1>{pageTitle}</h1>
+              <ul className="list-group list-group-horizontal mb-3">
+                <li className="list-group-item">Type: Wasm</li>
+                <li className="list-group-item">
+                  Size:{" "}
+                  {isLoadingState(details)
+                    ? "Loading …"
+                    : isErrorState(details)
+                    ? "Error"
+                    : Math.round(details.data.length / 1024) + " KiB"}
                 </li>
-                <li className="breadcrumb-item active" aria-current="page">
-                  {pageTitle}
-                </li>
-              </ol>
-            </nav>
+              </ul>
+            </div>
+            <div className="col">
+              {isLoadingState(details) ? (
+                <span>Loading …</span>
+              ) : isErrorState(details) ? (
+                <span>Error</span>
+              ) : (
+                <CodeInfo code={details} uploadTxHash={uploadTxHash} />
+              )}
+            </div>
           </div>
+          <div className="row white-row white-row-last">
+            <div className="col">
+              <h2>Instances</h2>
+              {isLoadingState(contracts) ? (
+                <p>Loading …</p>
+              ) : isErrorState(contracts) ? (
+                <p>Error loading instances</p>
+              ) : contracts.length === 0 ? (
+                <InstancesEmptyState />
+              ) : (
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Label</th>
+                      <th scope="col">Contract</th>
+                      <th scope="col">Creator</th>
+                      <th scope="col">Admin</th>
+                      <th scope="col">Executions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {contracts.map((address, index) => (
+                      <InstanceRow position={index + 1} address={address} key={address} />
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+          <FooterRow />
         </div>
-        <div className="row white-row">
-          <div className="col">
-            <h1>{pageTitle}</h1>
-            <ul className="list-group list-group-horizontal mb-3">
-              <li className="list-group-item">Type: Wasm</li>
-              <li className="list-group-item">
-                Size:{" "}
-                {isLoadingState(details)
-                  ? "Loading …"
-                  : isErrorState(details)
-                  ? "Error"
-                  : Math.round(details.data.length / 1024) + " KiB"}
-              </li>
-            </ul>
-          </div>
-          <div className="col">
-            {isLoadingState(details) ? (
-              <span>Loading …</span>
-            ) : isErrorState(details) ? (
-              <span>Error</span>
-            ) : (
-              <CodeInfo code={details} uploadTxHash={uploadTxHash} />
-            )}
-          </div>
-        </div>
-        <div className="row white-row white-row-last">
-          <div className="col">
-            <h2>Instances</h2>
-            {isLoadingState(contracts) ? (
-              <p>Loading …</p>
-            ) : isErrorState(contracts) ? (
-              <p>Error loading instances</p>
-            ) : contracts.length === 0 ? (
-              <InstancesEmptyState />
-            ) : (
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Label</th>
-                    <th scope="col">Contract</th>
-                    <th scope="col">Creator</th>
-                    <th scope="col">Admin</th>
-                    <th scope="col">Executions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {contracts.map((address, index) => (
-                    <InstanceRow position={index + 1} address={address} key={address} />
-                  ))}
-                </tbody>
-              </table>
-            )}
-          </div>
-        </div>
-        <FooterRow />
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ export function Login(): JSX.Element {
       </button>
     ) : (
       <>
-        <div className="mr-3 p-2 rounded bg-white">
+        <div className="mr-3 p-2 rounded ">
           <span title="Mnemonic for burner wallet">Mnemonic:</span>
           <input
             className="ml-3 flex-grow-1"
@@ -108,7 +108,7 @@ export function Login(): JSX.Element {
 
   return (
     <div className="d-flex align-items-center justify-content-end">
-      {error ? <div className="mr-3 p-2 rounded bg-white text-danger">{error}</div> : null}
+      {error ? <div className="mr-3 p-2 rounded text-danger">{error}</div> : null}
       {isUserLoggedIn ? renderLogoutButton() : renderLoginButton()}
     </div>
   );
