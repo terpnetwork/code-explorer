@@ -11,7 +11,7 @@ a.code-content {
   /* background-color: rgba(255, 255, 255, 0.8); */
   display: block;
   height: 100%;
-  color: rgb(235, 212, 255);
+  color: rgb(25, 5, 43);
 }
 
 a.code-content:hover {
@@ -31,5 +31,5 @@ a.code-content:hover {
 }
 
 .table {
-  color: white;
+  color: rgb(55, 8, 98);
 }

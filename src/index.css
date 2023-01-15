@@ -8,9 +8,9 @@ body {
 
   background-size: 100%;
   background-repeat: no-repeat;
-  background-color: rgb(26, 3, 57) !important;
+  background-color: rgb(11, 26, 28) !important;
   background-image: url(./assets/bk2.jpeg);
-  color: white;
+  color:rgba(91, 98, 196, 0.72);
 }
 
 code {
@@ -29,19 +29,19 @@ code {
 
 .breadcrumb, .breadcrumb-item.active, .list-group, .list-group-item {
   background-color: transparent;
-  color: white;
+  color: rgba(18, 19, 39, 0.72);
 }
 
 
 
 .card {
-  background: rgba(50, 6, 113, 0.72);
+  background: rgba(114, 255, 241, 0.72);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(91, 98, 196, 0.72);
   backdrop-filter: blur(7.9px);
   -webkit-backdrop-filter: blur(7.9px);
-  border: 1px solid rgba(50, 6, 113, 0.45);
-  color: white;
+  border: 1px solid rgba(58, 0, 140, 0.45);
+  color: rgba(91, 98, 196, 0.72);
   padding: 10px;
   }
 

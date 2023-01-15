@@ -14,10 +14,10 @@ export interface BackendSettings {
 // Configuration matches local devnet as defined in
 // https://github.com/cosmos/cosmjs/tree/main/scripts/wasmd
 const devnetSettings: BackendSettings = {
-  nodeUrls: ["https://rpc.osmosis.zone"],
-  denominations: ["uosmo", "uion"],
-  addressPrefix: "osmo",
-  gasPrice: GasPrice.fromString("0.25uosmo"),
+  nodeUrls: ["https://rpc-t.terp.nodestake.top"],
+  denominations: ["uterpx", "upersyx"],
+  addressPrefix: "terp",
+  gasPrice: GasPrice.fromString("0.25uterpx"),
 };
 
 // const oysternetSettings: BackendSettings = {
@@ -67,10 +67,10 @@ const devnetSettings: BackendSettings = {
 const knownBackends: Partial<Record<string, BackendSettings>> = {
   devnet: devnetSettings,
   cliffnet: {
-    nodeUrls: ["https://rpc.cliffnet.cosmwasm.com"],
-    denominations: ["upebble", "urock"],
-    addressPrefix: "wasm",
-    gasPrice: GasPrice.fromString("0.25upebble"),
+    nodeUrls: ["https://rpc-t.terp.nodestake.top"],
+    denominations: ["uterpx", "upersyx"],
+    addressPrefix: "terp",
+    gasPrice: GasPrice.fromString("0.25upersyx"),
   },
 };
 
